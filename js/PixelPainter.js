@@ -21,7 +21,7 @@ function setGrid(num) {
     for (var x = 0; x < num; x++) {
       var div = document.createElement("div");
       div.id = 'div' + x;
-      column.appendChild(row);
+      column.appendChild(div);
       div.style.float = "left";
       // div.style.outLine = "1px";
       div.style.backgroundColor = "orange";
