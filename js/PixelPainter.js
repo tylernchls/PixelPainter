@@ -1,17 +1,18 @@
-function setGrid(num) {
+function setGrid(n, m) {
 
 
-  var column = document.getElementById("grid");
+  var grid = document.getElementById("grid");
+  grid.setAttribute('style',`width: ${n*20}px; height: ${m*20}px;` );
 
-  for (var i = 0; i < num; i++) {
-    for (var x = 0; x < num; x++) {
+  for (var i = 0; i < n; i++) {
+    for (var x = 0; x < m; x++) {
       var div = document.createElement("div");
-      div.id = 'div' + x;
-      column.appendChild(div);
-      // div.style.outLine = "1px";
+      div.classList.add('cells');
+      div.id = 'div' + x; // remove! -ray
+      grid.appendChild(div);
+      div.style.float = "left";
       div.style.backgroundColor = "orange";
-      div.style.height = "20px";
-      div.style.width = "20px";
+
 
       div.addEventListener("mouseover", function() {
         this.style.backgroundColor = " green";
@@ -24,7 +25,7 @@ function setGrid(num) {
 
 
 
-setGrid(10);
+setGrid(20,20);
 
 
 
