@@ -1,3 +1,7 @@
+h1{
+text-align: center;
+}
+
 #pixelPainter{
    display: flex;
    justify-content: center;
@@ -12,10 +16,6 @@
   float: center;
 }
 
-
-h1{
-text-align: center;
-}
 
 #swatchContainer{
   position: absolute;
