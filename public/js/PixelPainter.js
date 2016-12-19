@@ -25,7 +25,7 @@ function setGrid(n, m) {
 function colorGrid(a,b) {
   var swatchGrid = document.getElementById('swatchGrid');
   swatchGrid.setAttribute('style',`width: ${a*20}px; height: ${b*20}px;` );
-
+  var colorIndex = 0
   for (var i = 0; i < a; i++) {
     for (var x = 0; x < b; x++) {
       var div = document.createElement("div");
@@ -33,7 +33,10 @@ function colorGrid(a,b) {
       div.id = 'div' + x; // remove! -ray
       swatchGrid.appendChild(div);
       div.style.float = "left";
-      div.style.backgroundColor = "white";
+      div.style.backgroundColor = colorsArr[colorIndex];
+      colorIndex++;
+
+
     }
   }
 }
@@ -48,6 +51,9 @@ var colorsArr = ['#fefa43 ','#fadb50 ', '#fef972 ', '#f1d781 ', '#39720e ',
  '#77faf9 ', '#3b8180 ', '#3a3c7e ', '#51baf6 ', '#b0d3e0 ', '#55a9a0 ', '#91caf4 ',
  '#adbed8 ','#685b7f ', '#686be5 ', '#3b6bd7 ', '#595bc2 ', '#697786 ', '#4c7ba9 ',
  '#367575 ', '#74d7c8 ', '#a2a2a2 ', '#cecfce ', '#000000 '];
+
+
+
 
 
 
