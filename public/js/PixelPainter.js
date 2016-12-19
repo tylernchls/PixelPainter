@@ -1,3 +1,5 @@
+var currentlySelectedColor = "white";
+
 function setGrid(n, m) {
 
   var grid = document.getElementById("grid");
@@ -13,7 +15,8 @@ function setGrid(n, m) {
       div.style.backgroundColor = "orange";
 
       div.addEventListener("mouseover", function() {
-        this.style.backgroundColor = " blue";
+        this.style.backgroundColor = currentlySelectedColor;
+
         console.log(this);
       });
 
@@ -36,6 +39,9 @@ function colorGrid(a,b) {
       div.style.backgroundColor = colorsArr[colorIndex];
       colorIndex++;
 
+      div.addEventListener('click', function() {
+        currentlySelectedColor = this.style.backgroundColor;
+      });
 
     }
   }
@@ -65,7 +71,7 @@ var colorsArr = ['#fefa43 ','#fadb50 ', '#fef972 ', '#f1d781 ', '#39720e ',
 
 
 setGrid(30,30);
-colorGrid(6,15);
+colorGrid(6,10);
 
 
 
