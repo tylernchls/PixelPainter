@@ -1,11 +1,12 @@
-var currentlySelectedColor = "orange";
+var currentlySelectedColor = "blue";
+// var currentlySelectedImage = null;
 
 // Clear Button
 var clearButton = document.getElementById('clearButton');
 clearButton.addEventListener('click', function() {
  var cells = document.getElementsByClassName('cells'); // grabs all cells and stores it in variable
  for(var i = 0; i < cells.length; i++) {
-  cells[i].style.backgroundColor = '';  // changes all sells back to orange
+  cells[i].style.backgroundColor = 'orange';  // changes all sells back to orange
  }
 });
 
@@ -77,6 +78,29 @@ function colorGrid(a,b) {
   }
 }
 
+// function imageGrid(c,d) {
+//   var imageGrid = document.getElementById('imageGrid');
+//   imageGrid.setAttribute('style',`width: ${c*20}px; height: ${d*20}px;`);
+//   var imageIndex = 0
+//   for (var i = 0; i < c; i++) {
+//     for (var x = 0; x < d; x++) {
+//       var div = document.createElement("div");
+//       div.classList.add('cells');
+//       div.id = 'div' + x; // remove! -ray
+//       imageGrid.appendChild(div);
+//       div.style.float = "left";
+//       div.style.backgroundImage = imageArr[imageIndex];
+//       imageIndex++;
+
+//       div.addEventListener('click', function() {
+//         currentlySelectedImage = this.style.backgroundImage;
+//       });
+//     }
+//   }
+// }
+
+
+
 
 
 
@@ -85,7 +109,7 @@ function colorGrid(a,b) {
 
 
 // imageGrid(3,3);
-setGrid(25,25);
+setGrid(30,30);
 colorGrid(6,10);
 
 
