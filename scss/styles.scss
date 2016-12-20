@@ -24,6 +24,8 @@ body{
     @media #{$mobile-screen} {
       transform: scale(.6);
       margin-left: -100px;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -38,14 +40,14 @@ body{
 
   #swatchContainer{
    display: inline-block;
-   margin-top: 200px;
-   margin-right: 100px;
    vertical-align: top;
 
    @media #{$mobile-screen} {
       transform: scale(.8);
       margin-top: 20px;
-      margin-left: 200px;
+      margin-left: 100px;
+      display: flex;
+      justify-content: center;
     }
 
   }
@@ -62,6 +64,10 @@ body{
 
   #buttonContainer {
     display: inline-block;
+
+    @media #{$mobile-screen} {
+
+    }
   }
 
 
