@@ -44,7 +44,6 @@ function setGrid(n, m) {
       div.classList.add('cells');
       div.id = 'div' + x; // remove! -ray
       grid.appendChild(div);
-      div.style.float = "left";
       div.style.backgroundColor = '';
 
       div.addEventListener("mouseover", function() {
@@ -68,7 +67,6 @@ function colorGrid(a,b) {
       div.classList.add('colorCells');
       div.id = 'div' + x; // remove! -ray
       swatchGrid.appendChild(div);
-      div.style.float = "left";
       div.style.backgroundColor = colorsArr[colorIndex];  //adds colors to grid from array of colors
       colorIndex++;
 
