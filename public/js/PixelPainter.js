@@ -31,6 +31,10 @@ var colorsArr = ['#fefa43 ', '#fadb50 ', '#fef972 ', '#f1d781 ', '#39720e ',
  '#367575 ', '#74d7c8 ', '#a2a2a2 ', '#cecfce ', '#000000 '];
 
 
+function gridMouseOver() {
+  this.style.backgroundColor = currentlySelectedColor;  // sets bgc to whatever color variable is set to
+}
+
 
 // sets paint grid
 function setGrid(n,m) {
@@ -42,18 +46,17 @@ function setGrid(n,m) {
     for (var x = 0; x < m; x++) {
       var div = document.createElement('div');  //creates new divs inside of grid div
       div.classList.add('cells');
-      div.id = 'div' + x; // remove! -ray
+      div.dataset.x = x;
+      div.dataset.y = i;
       grid.appendChild(div);
       div.style.backgroundColor = '';
-
-      div.addEventListener('mouseover', function() {
-        this.style.backgroundColor = currentlySelectedColor;  // sets bgc to whatever color variable is set to
-
-        console.log(this);
-      });
-
+      div.addEventListener('mouseover', gridMouseOver);
     }
   }
+}
+
+function colorGridClick() {
+  currentlySelectedColor = this.style.backgroundColor; // sets currentlySelectedColor to what color is clicked on
 }
 
 // sets colorGrid
@@ -65,14 +68,11 @@ function colorGrid(a,b) {
     for (var x = 0; x < b; x++) {
       var div = document.createElement('div');
       div.classList.add('colorCells');
-      div.id = 'div' + x; // remove! -ray
+      div.dataset.x = x;
+      div.dataset.y = i;
       swatchGrid.appendChild(div);
-      div.style.backgroundColor = colorsArr[colorIndex];  //adds colors to grid from array of colors
-      colorIndex++;
-
-      div.addEventListener('click', function() {
-        currentlySelectedColor = this.style.backgroundColor; // sets currentlySelectedColor to what color is clicked on
-      });
+      div.style.backgroundColor = colorsArr[colorIndex++];  //adds colors to grid from array of colors
+      div.addEventListener('click', colorGridClick);
     }
   }
 
