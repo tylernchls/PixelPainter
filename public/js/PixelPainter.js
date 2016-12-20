@@ -1,4 +1,4 @@
-var currentlySelectedColor = "white";
+var currentlySelectedColor = "blue";
 // var currentlySelectedImage = null;
 
 // Clear Button
@@ -13,7 +13,7 @@ clearButton.addEventListener('click', function() {
 // Erase button
 var eraseButton = document.getElementById('eraseButton');
 eraseButton.addEventListener('click', function() {
-  currentlySelectedColor = 'orange';  // changes color of pixel back to orange
+  currentlySelectedColor = '';  // changes color of pixel back to orange
 });
 
 
@@ -45,7 +45,7 @@ function setGrid(n, m) {
       div.id = 'div' + x; // remove! -ray
       grid.appendChild(div);
       div.style.float = "left";
-      div.style.backgroundColor = "orange";
+      div.style.backgroundColor = '';
 
       div.addEventListener("mouseover", function() {
         this.style.backgroundColor = currentlySelectedColor;  // sets bgc to whatever color variable is set to
