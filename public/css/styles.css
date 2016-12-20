@@ -1,24 +1,17 @@
 body {
-  background-color: white;
   background-image: url("http://wallpapercave.com/wp/tzSz4iB.jpg"); }
   body h1 {
     text-align: center;
     color: blue; }
   body #pixelPainter {
-    max-width: 1280px;
-    margin: 0; }
-    @media (max-width: 1280px) {
-      body #pixelPainter {
-        width: 100%;
-        margin: 20 100; } }
-    @media (max-width: 899px) {
-      body #pixelPainter {
-        width: 100%;
-        margin: 0 auto;
-        transform: scale(0.8);
-        vertical-align: bottom; } }
+    display: flex;
+    flex-flow: row wrap; }
   body #canvas {
     display: inline-block; }
+    @media (max-width: 599px) {
+      body #canvas {
+        transform: scale(0.6);
+        margin-left: -100px; } }
   body #grid .cells {
     box-sizing: border-box;
     height: 20px;
@@ -30,13 +23,11 @@ body {
     margin-top: 200px;
     margin-right: 100px;
     vertical-align: top; }
-    @media (max-width: 1280px) {
+    @media (max-width: 599px) {
       body #swatchContainer {
-        margin-right: 20px; } }
-    @media (max-width: 899px) {
-      body #swatchContainer {
-        margin-right: 10px;
-        margin-top: 10px; } }
+        transform: scale(0.8);
+        margin-top: 20px;
+        margin-left: 200px; } }
   body #swatchContainer .colorCells {
     box-sizing: border-box;
     height: 20px;
